@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Log IN</title>
+    <script src="https://kit.fontawesome.com/cc2fd599b0.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background: #081b29;
+        }
+        .btn {
+            padding: 9px 14px;
+            border-radius: 22px;
+            color: white;
+            background-color: dodgerblue;
+            font-weight: bold;
+            font-size: 12px;
+            margin: 3px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: white;
+            color: dodgerblue;
+        }
+
+        .login {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 200px;
+        }
+
+        input {
+            width: 250px;
+            border: 1px solid #ddd;
+            height: 60px;
+            font-size: 15px;
+            padding: 0 25px;
+            border-radius: 5px;
+        }
+
+        .b {
+            margin-top: 20%;
+        }
+        #pass{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="login">
+
+        <div class="lr-form-group mb-3" id="em">
+            <input type="text" placeholder="Email id / Mobile Number" name="mobile" id="user_mobiles">
+        </div>
+        <br>
+        <div class="lr-form-group mb-3" id="pass">
+            <input type="password" placeholder="Password" name="password" autocomplete="current-password" required=""
+                id="id_password">
+            <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+            
+        </div>
+        <a href="" target="_blank"><button class="btn b">LOG IN</button></a>
+    </div>
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#id_password');
+
+        togglePassword.addEventListener('click', function (e) {
+            // toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            // toggle the eye slash icon
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>REGISTER</title>
+    <script src="https://kit.fontawesome.com/cc2fd599b0.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background: #081b29;
+
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        /* Add padding to containers */
+        .container {
+            padding: 16px;
+            /* width: 50%; */
+            padding:10px 400px 0 400px;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        /* Full-width input fields */
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: #f1f1f1;
+            outline: none;
+        }
+
+
+        .registerbtn:hover {
+            opacity: 1;
+        }
+
+        a {
+            color: dodgerblue;
+        }
+
+        .signin {
+            background-color: #081b29;
+            text-align: center;
+        }
+
+
+
+        .btn {
+            padding: 9px 14px;
+            border-radius: 22px;
+            color: white;
+            background-color: dodgerblue;
+            font-weight: bold;
+            font-size: 12px;
+            margin: 3px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #ffffff;
+            color: dodgerblue;
+        }
+
+        .name {
+            display: flex;
+        }
+
+        .container span {
+            margin: 10px;
+        }
+
+        .mikky {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .far {
+            padding-bottom: 18px;
+        }
+
+        ::placeholder {
+            color: rgb(0, 0, 0);
+            opacity: 1;
+        }
+        .container h1{
+            text-align: center;
+        }
+
+        @media (max-width: 1100px) {
+            .container{
+                padding: 10px 100px 0 100px;
+            }
+        }
+        @media (max-width: 300px) {
+            .container{
+                padding: 10px 20px 0 20px;
+            }
+        }
+
+    </style>
+</head>
+
+<body text="white">
+    <h2 class="login">
+        <form action="action_page.php" id="myForm">
+            <div class="container">
+                <h1>Register</h1>
+                <p>Please fill in this form to create an account.</p>
+
+                <label for="email"><b>Name</b></label>
+                <div class="name">
+                    <input type="text" placeholder="First Name" id="email" required>
+                    <span></span>
+                    <input type="text" placeholder="Last Name" id="email" required>
+                </div>
+
+                <label for="Phone"><b>Phone Nomber</b></label>
+                <input type="text" placeholder="+91 Mobile Nomber">
+
+
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <div class="mikky">
+                    <input type="text" id="id_password" placeholder="Enter Password" name="psw" id="psw" required>
+                    <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+                </div>
+
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <div class="mikky">
+                    <input type="password" id="id_password" placeholder="Repeat Password" name="psw-repeat"
+                        id="psw-repeat" required>
+                    <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+                </div>
+
+                <div class="">
+                    <a href="" target="_blank"><button class="btn submit">Submit Now</button></a>
+                    <button class="btn" onclick="fun()">Reset</button></a>
+                </div>
+
+            </div>
+
+            <div class="container signin last">
+                <p>Already have an account? <a href="./login.html">Sign in</a>.</p>
+            </div>
+        </form>
+
+
+        <!-- </form> -->
+    </h2>
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#id_password');
+        togglePassword.addEventListener('click', function (e) {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        function fun() {
+            document.getElementById("myForm").reset();
+        }
+    </script>
+</body>
+
+</html>
